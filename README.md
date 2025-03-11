@@ -57,7 +57,7 @@ The `Essay.Assemble()` Function simply packages all the Information such as Para
 Keep in mind that you need [Microsoft Office](https://www.microsoft.com/en-us/microsoft-365/microsoft-office) or [LibreOffice](https://www.libreoffice.org/) installed on your device depending on your Operating System, thats ONLY if you are trying to convert your document to a pdf.
 You do NOT need any type of Document management software/suit for just generating a DOCX file as that is handled inside the imported python library.
 
-Speaking of python libraries, make sure you install all of the required packages using the requirements.txt file provided.
+Speaking of python libraries, make sure you install all of the required packages using the [requirements.txt](requirements.txt) file provided.
 
 ```
 pip install -r requirements.txt
