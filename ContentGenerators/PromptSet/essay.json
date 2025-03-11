@@ -1,0 +1,21 @@
+{
+  "title": "Generate a clear, engaging 5 to 10-word title summarizing this news article: \"[news]\". Only return the title, nothing else.",
+
+  "conclusion_idea": "An essay on \"[topic]\" with [body_paragraphs] body paragraphs discussed these ideas: [idealist]. Provide one unique, fresh idea for the conclusion in 20 words or fewer, avoiding any similarities to the listed ideas: [adins].",
+
+  "conclusion": "Craft a compelling [wordpp]-word final paragraph using the idea: {[concidea]} for the topic: ([topic]). Avoid summarization or labeling. Focus on making the conclusion impactful, dramatic, and engaging without explicitly stating that it is a conclusion.",
+
+  "introduction": "Write a captivating, suspenseful [wordpp]-word introduction for an essay on [topic], covering: [idealist]. Do not label or conclude. Use an engaging hook to encourage further reading, keeping details minimal but intriguing: [command].",
+
+  "old_idea_paragraph": "Generate a [wordpp]-word paragraph on '[idea]' [toaddproc] while keeping consistency with the topic: [topic]. Start by explaining '[idea]', ensuring it flows naturally with the essay. Do not title, conclude, or exceed the word limit. Index only the source name at the end without any URLs.",
+
+  "paragraph": "Write a [wordpp]-word paragraph on '[idea]' [toaddproc], ensuring consistency with '[oldidea]'. Begin by introducing '[idea]' naturally and maintaining the essay's coherence on [topic]. Do not summarize or conclude. At the end, mention only the publishing organization's name, excluding URLs.",
+
+  "idea": "Provide a structured list of [count] ideas for an essay on '[topic]', strictly formatted as: [\"idea 1\", \"idea 2\", ...]. Each idea must have at least 8 words. Follow these commands: ([adins]). Return only the list, ensuring it is valid for Python processing.",
+
+  "citation": "From the provided information: [ccstring], generate a concise citation in [citationformat] format, ensuring all requirements are met. Include the URL: [url], keeping the citation under 200 characters. Do not add notes, descriptions, or extra text.",
+
+  "picture_description": "Create a highly specific, maximum 4-word description for '[idea]', directly tied to '[topic]'. Ensure clarity, avoid figurative language, and mention '[topic]' explicitly. Use simple, precise English without extra details or formatting.",
+
+  "search_question": "Convert this sentence: '[idea]' into a precise, 5-word maximum question, directly inquiring about the topic without missing any key details."
+}

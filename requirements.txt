@@ -1,0 +1,11 @@
+pillow
+beautifulsoup4
+googlesearch-python
+PyPDF4
+fitz
+PyMuPDF
+python-docx
+requests
+openai
+docx2pdf
+deep-translator
