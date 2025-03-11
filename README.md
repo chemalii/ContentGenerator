@@ -1,12 +1,14 @@
 # Content Generator
 
----
+
 A Content Generator that utilizes an LLM and internet scraping to dynamically generate well-structured documents of varying lengths, rich in information and traditionally partitioned.
 
 An online publicly available version of this Essay Generated is Available on my Website [chemali.de](https://chemali.de), it's easier to use for people who are not able to code. Keep in mind that the Server might crash if its facing lots of traffic/generation requests, so never depend on it for any serious Generation purposes.
 
 
 ![Website Image Showcase](readmeAssets/chemaliessaypage.png)
+
+---
 
 Here is the Introduction from the [Sample Essay Provided](Generation%20Sample.pdf):
 
