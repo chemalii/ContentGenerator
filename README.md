@@ -52,7 +52,7 @@ Essay.Assemble(watermark=True)
 
 ```
 
-The `Essay.Assemble()` Function simply packages all the Information such as Paragraphs, citations, and pictures generated using the `Essay.Generate()` Function, inside a Final Document, that document can either be a DOCX or PDF file.
+The `Essay.Assemble()` Function simply packages all the Information such as Paragraphs, citations, and pictures generated using the `Essay.Generate()` Function, inside a Final Document, that document can either be a DOCX or PDF file. After all the functions have been executed successfully, the document should apear in your `./` path as `essay_XXXXXXXXXX.docx/pdf`. From there you can access the final result Generated.
 
 Keep in mind that you need [Microsoft Office](https://www.microsoft.com/en-us/microsoft-365/microsoft-office) or [LibreOffice](https://www.libreoffice.org/) installed on your device depending on your Operating System, thats ONLY if you are trying to convert your document to a pdf.
 You do NOT need any type of Document management software/suit for just generating a DOCX file as that is handled inside the imported python library.
