@@ -41,7 +41,7 @@ def __init__(self,
     ...
 ```
 
-In order to use the Essay Generator and receive a Human-readable Essay, we can use this code right here
+In order to use the Essay Generator and receive a Human-readable Essay, we can use this code right here:
 
 ```
 from ContentGenerators.Essay import Document
