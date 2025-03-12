@@ -85,7 +85,9 @@ Expect More Optimisations, New Updates, and Generation Features in the future!
 
 As we saw in the previous section, the essay generator is composed of 2 significant pieces, the *Content Generator* and the *Content Assembler*.
 
-![diagram](readmeAssets/EssayGeneratorDiagram.png)
+<div align="center">
+    <img class="img-logo img-responsive" src="readmeAssets/EssayGeneratorDiagram.png" border="0" onerror="this.style.display='none'">
+</div>
 
 Let's start with the Content Generator, these are the main parameters of the Essay Generator function along with their default values:
 
