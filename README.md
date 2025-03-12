@@ -165,7 +165,7 @@ This parameter decides what language the essay will be written in.
 Here is a list of all the language you can generate your Essay in:
 
 |Languages|
-|---------------|----------------|----------------|---------------|---------------|----------------|
+|---------------------------------------------------------------------------------------------|
 | English - en   | Afrikaans - af  | Albanian - sq   | Amharic - am   | Arabic - ar    | Armenian - hy   |
 | Assamese - as  | Aymara - ay     | Azerbaijani - az | Bambara - bm   | Basque - eu    | Belarusian - be |
 | Bengali - bn   | Bhojpuri - bho  | Bosnian - bs   | Bulgarian - bg | Catalan - ca   | Cebuano - ceb   |
