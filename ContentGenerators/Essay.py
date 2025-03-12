@@ -39,6 +39,8 @@ class Document:
               citation_format="MLA"
               ):
         if id is None: self.id = randint(1, int("9"*10))
+        else:
+            self.id = id
         self.path = path
         self.topic = topic
         self.commands = commands
