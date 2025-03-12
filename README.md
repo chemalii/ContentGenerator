@@ -186,6 +186,7 @@ Here is a list of all the language you can generate your Essay in:
 | Turkmen - tk   | Twi - ak        | Ukrainian - uk | Urdu - ur      | Uyghur - ug    | Uzbek - uz     |
 | Vietnamese - vi | Welsh - cy      | Xhosa - xh     | Yiddish - yi   | Yoruba - yo    | Zulu - zu      |
 
+
 Let's just Generate the Essay in English:
 
 ```python
