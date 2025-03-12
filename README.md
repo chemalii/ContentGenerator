@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-    <img class="img-logo img-responsive" src="assets/img/chemali.png" height="90" border="0" onerror="this.style.display='none'">
+    <img class="img-logo img-responsive" src="readmeAssets/chemali.png" height="90" border="0" onerror="this.style.display='none'">
 </div>
 
 # Content Generator
