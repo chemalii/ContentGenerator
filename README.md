@@ -28,12 +28,12 @@ The ContentGenerator is not fully complete yet, as it only has an Essay Generato
 
 # How to use the Content Generator
 Let's start with the Essay Section, we import the class that manages Essays.
-```
+```python
 from ContentGenerators.Essay import Document
 ```
 The Essay itself has multiple parameters that determine the size of the document and the information that it contains.
 The Essay Class already comes with pre-set values to avoid possible crashes due to human error.
-```
+```python
 # These default values result in the Generation of a Generic Essay That talks about "The Evolution of Artificial Intelligence".
 def __init__(self,
     id=None,
@@ -52,7 +52,7 @@ def __init__(self,
 
 In order to use the Essay Generator and receive a Human-readable Essay, we can use this code right here:
 
-```
+```python
 from ContentGenerators.Essay import Document
 
 Essay = Document(pictures=True, topic="World War II")
@@ -83,7 +83,7 @@ As we saw in the previous section, the essay generator is composed of 2 signific
 
 Let's start with the Content Generator, these are the main parameters of the Essay Generator function along with their default values:
 
-```
+```python
 id=None,
 path=".", #
 topic="The Evolution of Artificial Intelligence.",
@@ -99,14 +99,14 @@ citation_format="MLA"
 This parameter was originally created for handling a load of essays and storing them in a database, basically preserve uniqueness in essay filenames in order to easily server them to the userbase.
 
 The value of this parameter can be as simple as a random string:
-```
+```python
 Essay = Document(id="JSH3UI43H29RIJS83")
 ```
 ## 2: path (String)
 This parameter is just for setting where the final product, the essay, will be stored. Its originally set to `"."` which means that the essay will be generated in the same directory the project exists in.
 
 If you want to place the document in a separate folder in your project, you can easily do so by just specifying in the parameter:
-```
+```python
 Essay = Document(path="my_folder")
 ```
 
@@ -114,7 +114,7 @@ Essay = Document(path="my_folder")
 This is the most important parameter in the Generate Function as it determines what the requested Essay will be talking about, it's used to generate ideas, pictures, and most importantly paragraphs.
 
 The value of this parameter can be set this way:
-```
+```python
 Essay = Document(topic="The Cold War.")
 ```
 
@@ -122,12 +122,12 @@ Essay = Document(topic="The Cold War.")
 This parameter can be used to alter the information that the LLM Generator, examples of usage can include bias as in siding with a specific side of a conflict, focusing more on one side of a topic rather than broadly indulging in it, or using a specific way of writing/language.
 
 You can tell the LLM what to do like this:
-```
+```python
 Essay = Document(commands="Side with the Soviet Union on this one, and describe how their ideology is right. Use extremely Complicated and Detailed Language.")
 ```
 or (for neutrality's sake):
 
-```
+```python
 Essay = Document(commands="Side with the Americans on this one, and describe how their ideology is right. Use extremely simple and broad Language.")
 ```
 
@@ -135,19 +135,19 @@ Essay = Document(commands="Side with the Americans on this one, and describe how
 This parameter determines the overall size of the essay itself, the word count is heavily dependent on the amount of paragraphs due to the reset of token generation in between each paragraph, which is very handy when using an online model because of stricter generation limits.
 
 Let's say we need 8 paragraphs in this Essay:
-```
+```python
 Essay = Document(paragraphs=8)
 ```
 
 ## 6: wordcount (Integer)
 This parameters determines the size of each paragraph in the essay using a words-per-paragraph equation, which basically determines how many words each paragraph will contain.
-```
+```python
 words_per_paragraph = word_count / paragraph_count
 # The value of this variable is then fed into the paragraph generating prompt.
 ```
 
 Let's say we will need a 2000-word essay:
-```
+```python
 Essay = Document(wordcount=2000)
 ```
 
@@ -155,7 +155,7 @@ Essay = Document(wordcount=2000)
 This parameter just determines whether the essay will contain pictures or not.
 
 Let's say we do want pictures in this essay:
-```
+```python
 Essay = Document(pictures=True)
 ```
 
@@ -189,7 +189,7 @@ Vietnamese   Welsh       Xhosa       Yiddish     Yoruba       Zulu
 ```
 Let's just Generate the Essay in English:
 
-```
+```python
 Essay = Document(language="en")
 ```
 
@@ -198,7 +198,7 @@ This parameter determines what language will be used in the search for informati
 It's quite important for region specific topics that might only be available in a specific language.
 
 Since we are talking about The Cold War which is widely covered in the english language, lets just stick to english:
-```
+```python
 Essay = Document(search_language="en")
 ```
 
@@ -224,13 +224,13 @@ Kossinets, Gueorgi, and Duncan J. Watts. 2009. “Origins of Homophily in an Evo
 Expect 80% - 90% Accuracy with the Content Generator's Citations.
 
 Let's just use APA Format for this Essay:
-```
+```python
 Essay = Document(citation_format="APA")
 ```
 
 ### We are done with explaining the parameters, now let's generate an essay with the examples provided.
 Here is the Script to Generate the Essay Using the Examples Above.
-```
+```python
 from ContentGenerators.Essay import Document
 
 Essay = Document(
