@@ -70,7 +70,6 @@ class Document:
         lang = self.language
         searchlang = self.search_language
         citationformat = self.citation_format
-        hashstring = self.id
         command = self.commands
         topic = translate(self.topic, 'en', lang)
         pictureput = self.pictures
@@ -171,7 +170,7 @@ class Document:
         self.paragraphs = sort(self.paragraphs)
 
 
-    def Assemble(self, pdf=True, watermark=False):
+    def Assemble(self, pdf=False, watermark=False):
         self.filetype = "docx"
         if pdf: self.filetype = "pdf"
         topic = self.topic

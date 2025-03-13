@@ -6,8 +6,8 @@ settings_file_name = 'settings.json'
 default_values = {
     "LANGUAGE_MODEL": {
         "OPENAI": True,
-        "MODEL": "llama3.2",
-        "BASE_URL": "http://localhost:11434/",
+        "MODEL": "---",
+        "BASE_URL": "---",
         "API_KEY": "?"
     },
     "DOCUMENT_SETTINGS": {

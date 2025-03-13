@@ -1,7 +1,3 @@
-<div align="center">
-    <img class="img-logo img-responsive" src="readmeAssets/chemali.png" height="140" border="0" onerror="this.style.display='none'">
-</div>
-
 # Content Generator
 
 
@@ -29,7 +25,42 @@ The ContentGenerator was tested using a locally hosted [Meta Llama3.2 3B](https:
 The ContentGenerator is not fully complete yet, as it only has an Essay Generator Available. Do expect a *Story Generator* to come out any time soon.
 
 ---
+# Setting up the [settings.json](settings.json) File:
+Despite being simple, the settings file is quite important.
+```json
+{
+    "LANGUAGE_MODEL": {
+        "OPENAI": true,
+        "MODEL": "---",
+        "BASE_URL": "---",
+        "API_KEY": "?"
+    },
+    "DOCUMENT_SETTINGS": {
+        "WATERMARK_PDF_LOCATION": "---"
+    }
+}
+```
+The moment you import and run the package without having a settings file saved, a settings.json file will be created and 
+an exception will be raised telling you to fill it up.
 
+The most important part is setting up the LLM part... If you wish to use OpenAI Model, Make sure to set `OPENAI` to `true` and choosing what model you want to use and don't forget your API Key. Do NOT fill in the `BASE_URL` value as that is pre-set within OpenAI package.
+
+If you wish to use a custom/locally hosted LLM, then set `OPENAI` to `false` and specify which model you want to use and the `BASE_URL` where the requests to the LLM will be made.
+I used [ollama](https://github.com/ollama/ollama) for my testing, so that means my settings.json looked like this:
+
+```json
+{
+    "LANGUAGE_MODEL": {
+        "OPENAI": false,
+        "MODEL": "llama3.2",
+        "BASE_URL": "http://localhost:11434/v1",
+        "API_KEY": "?"
+    },
+    "DOCUMENT_SETTINGS": {
+        "WATERMARK_PDF_LOCATION": "WatermarkTemplate.pdf"
+    }
+}
+```
 # How to use the Content Generator
 Let's start with the Essay Section, we import the class that manages Essays.
 ```python
@@ -84,10 +115,6 @@ Expect More Optimisations, New Updates, and Generation Features in the future!
 # How Does the Essay Generator Work?
 
 As we saw in the previous section, the essay generator is composed of 2 significant pieces, the *Content Generator* and the *Content Assembler*.
-
-<div align="center">
-    <img class="img-logo img-responsive" src="readmeAssets/EssayGeneratorDiagram.png" border="0" onerror="this.style.display='none'">
-</div>
 
 Let's start with the Content Generator, these are the main parameters of the Essay Generator function along with their default values:
 
@@ -171,33 +198,30 @@ Essay = Document(pictures=True)
 This parameter decides what language the essay will be written in.
 
 Here is a list of all the language you can generate your Essay in:
-
-| English - en   | Afrikaans - af  | Albanian - sq   | Amharic - am   | Arabic - ar    | Armenian - hy   |
-|---------------|----------------|----------------|---------------|---------------|----------------|
-| Assamese - as  | Aymara - ay     | Azerbaijani - az | Bambara - bm   | Basque - eu    | Belarusian - be |
-| Bengali - bn   | Bhojpuri - bho  | Bosnian - bs   | Bulgarian - bg | Catalan - ca   | Cebuano - ceb   |
-| Chichewa - ny  | Chinese - zh-CN | Corsican - co  | Croatian - hr  | Czech - cs     | Danish - da     |
-| Dhivehi - dv   | Dogri - doi     | Dutch - nl     | Esperanto - eo | Estonian - et  | Ewe - ee        |
-| Filipino - tl  | Finnish - fi    | French - fr    | Frisian - fy   | Galician - gl  | Georgian - ka   |
-| German - de    | Greek - el      | Guarani - gn   | Gujarati - gu  | Haitian - ht   | Hausa - ha      |
-| Hawaiian - haw | Hebrew - iw     | Hindi - hi     | Hmong - hmn    | Hungarian - hu | Icelandic - is  |
-| Igbo - ig      | Ilocano - ilo   | Indonesian - id| Irish - ga     | Italian - it   | Japanese - ja   |
-| Javanese - jw  | Kannada - kn    | Kazakh - kk    | Khmer - km     | Kinyarwanda - rw | Konkani - gom |
-| Korean - ko    | Krio - kri      | Kurdish (K) - ku | Kurdish (S) - ckb | Kyrgyz - ky  | Lao - lo       |
-| Latin - la     | Latvian - lv    | Lingala - ln   | Lithuanian - lt | Luganda - lg  | Luxembourgish - lb |
-| Macedonian - mk | Maithili - mai  | Malagasy - mg  | Malay - ms     | Malayalam - ml | Maltese - mt   |
-| Maori - mi     | Marathi - mr    | Meiteilon - mni-Mtei | Mizo - lus | Mongolian - mn | Burmese - my   |
-| Nepali - ne    | Norwegian - no  | Odia - or      | Oromo - om     | Pashto - ps    | Persian - fa   |
-| Polish - pl    | Portuguese - pt | Punjabi - pa   | Quechua - qu   | Romanian - ro  | Russian - ru   |
-| Samoan - sm    | Sanskrit - sa   | Scots Gaelic - gd | Sepedi - nso | Serbian - sr  | Sesotho - st   |
-| Shona - sn     | Sindhi - sd     | Sinhala - si   | Slovak - sk    | Slovenian - sl | Somali - so    |
-| Spanish - es   | Sundanese - su  | Swahili - sw   | Swedish - sv   | Tajik - tg     | Tamil - ta     |
-| Tatar - tt     | Telugu - te     | Thai - th      | Tigrinya - ti  | Tsonga - ts    | Turkish - tr   |
-| Turkmen - tk   | Twi - ak        | Ukrainian - uk | Urdu - ur      | Uyghur - ug    | Uzbek - uz     |
-| Vietnamese - vi | Welsh - cy      | Xhosa - xh     | Yiddish - yi   | Yoruba - yo    | Zulu - zu      |
-
-
-
+```
+English      Afrikaans   Albanian    Amharic     Arabic       Armenian  
+Assamese     Aymara      Azerbaijani Bambara     Basque       Belarusian  
+Bengali      Bhojpuri    Bosnian     Bulgarian   Catalan      Cebuano  
+Chichewa     Chinese     Corsican    Croatian    Czech        Danish  
+Dhivehi      Dogri       Dutch       Esperanto   Estonian     Ewe  
+Filipino     Finnish     French      Frisian     Galician     Georgian  
+German       Greek       Guarani     Gujarati    Haitian      Hausa  
+Hawaiian     Hebrew      Hindi       Hmong       Hungarian    Icelandic  
+Igbo         Ilocano     Indonesian  Irish       Italian      Japanese  
+Javanese     Kannada     Kazakh      Khmer       Kinyarwanda  Konkani  
+Korean       Krio        Kurdish (K) Kurdish (S) Kyrgyz       Lao  
+Latin        Latvian     Lingala     Lithuanian  Luganda      Luxembourgish  
+Macedonian   Maithili    Malagasy    Malay       Malayalam    Maltese  
+Maori        Marathi     Meiteilon   Mizo        Mongolian    Burmese  
+Nepali       Norwegian   Odia        Oromo       Pashto       Persian  
+Polish       Portuguese  Punjabi     Quechua     Romanian     Russian  
+Samoan       Sanskrit    Scots G.    Sepedi      Serbian      Sesotho  
+Shona        Sindhi      Sinhala     Slovak      Slovenian    Somali  
+Spanish      Sundanese   Swahili     Swedish     Tajik        Tamil  
+Tatar        Telugu      Thai        Tigrinya    Tsonga       Turkish  
+Turkmen      Twi         Ukrainian   Urdu        Uyghur       Uzbek  
+Vietnamese   Welsh       Xhosa       Yiddish     Yoruba       Zulu  
+```
 Let's just Generate the Essay in English:
 
 ```python
@@ -261,5 +285,39 @@ Essay.Generate()
 Essay.Assemble(watermark=True)
 ```
 Give it a try and let me know how it goes!
+
+---
+
+Now Lets talk about the Content Assembler, this Function essentially packages all the information created by Content Generator, and returns a File, either DOCX or PDF.
+Here is the Function's Initialisation along with the default values set
+```python
+def Assemble(self, 
+    pdf=False, 
+    watermark=False
+    ):
+```
+## 1: pdf (Boolean)
+This parameter just decides whether the document generated would be a PDF or DOCX.
+
+Let's pick .pdf for this essay:
+```python
+Essay.Assemble(pdf=True)
+```
+
+## 2: watermark (Boolean)
+When activated, this parameter applies a watermark on the generated document.
+
+The function behind this parameter requires a watermark.pdf template similar to the one [present in the repo](WatermarkTemplate.pdf), and a specification of its path in the [settings.json](settings.json) file.
+
+```json
+"DOCUMENT_SETTINGS": {
+  "WATERMARK_PDF_LOCATION": "WatermarkTemplate.pdf"
+}
+```
+Let's just say that we need a Watermark applied on our Document:
+
+```python
+Essay.Assemble(watermark=True)
+```
 
 ---
