@@ -66,6 +66,12 @@ I used [ollama](https://github.com/ollama/ollama) for my testing, so that means 
 }
 ```
 # How to use the Content Generator
+
+<div align="center">
+    <img class="img-logo img-responsive" src="readmeAssets/EssayGeneratorDiagram.png"  border="0" onerror="this.style.display='none'">
+</div>
+
+
 Let's start with the Essay Section, we import the class that manages Essays.
 ```python
 from ContentGenerators.Essay import Document
