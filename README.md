@@ -273,29 +273,6 @@ Let's just use APA Format for this Essay:
 Essay = Document(citation_format="APA")
 ```
 
-### We are done with explaining the parameters, now let's generate an essay with the examples provided.
-Here is the Script to Generate the Essay Using the Examples Above.
-```python
-from ContentGenerators.Essay import Document
-
-Essay = Document(
-    id="JSH3UI43H29RIJS83",
-    path="readmeAssets",
-    topic="The Cold War.",
-    commands="Side with the Americans on this one, and describe how their ideology is right. Use extremely simple and broad Language.",
-    paragraphs=8,
-    wordcount=2000,
-    pictures=True,
-    language="en",
-    search_language="en",
-    citation_format="APA"
-)
-
-Essay.Generate()
-Essay.Assemble(watermark=True)
-```
-Give it a try and let me know how it goes!
-
 ---
 
 Now Lets talk about the Content Assembler, this Function essentially packages all the information created by Content Generator, and returns a File, either DOCX or PDF.
@@ -331,3 +308,27 @@ Essay.Assemble(watermark=True)
 ```
 
 ---
+
+### We are done with explaining the parameters and Functions, now let's generate an essay with the examples provided.
+Here is the Script to Generate the Essay Using the Examples Above.
+```python
+from ContentGenerators.Essay import Document
+
+Essay = Document(
+    id="JSH3UI43H29RIJS83",
+    path="readmeAssets",
+    topic="The Cold War.",
+    commands="Side with the Americans on this one, and describe how their ideology is right. Use extremely simple and broad Language.",
+    paragraphs=8,
+    wordcount=2000,
+    pictures=True,
+    language="en",
+    search_language="en",
+    citation_format="APA"
+)
+
+Essay.Generate()
+Essay.Assemble(pdf=True, watermark=True)
+```
+
+Give it a try and let me know how it goes!
