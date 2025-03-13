@@ -330,5 +330,9 @@ Essay = Document(
 Essay.Generate()
 Essay.Assemble(pdf=True, watermark=True)
 ```
+And the Content Generator has generated an Essay on par with the requirements provided.
+<div align="center">
+    <img class="img-logo img-responsive" src="readmeAssets/EssayView.png"  border="0" onerror="this.style.display='none'">
+</div>
 
-Give it a try and let me know how it goes!
+You can check out the complete essay [here](readmeAssets/GeneratedEssay_JSH3UI43H29RIJS83.pdf).
