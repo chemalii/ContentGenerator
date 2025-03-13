@@ -1,3 +1,7 @@
+<div align="center">
+    <img class="img-logo img-responsive" src="readmeAssets/chemali.png" height="140" border="0" onerror="this.style.display='none'">
+</div>
+
 # Content Generator
 
 
