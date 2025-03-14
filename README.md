@@ -47,7 +47,7 @@ Despite being simple, the settings file is quite important.
 The moment you import and run the package without having a settings file saved, a settings.json file will be created and 
 an exception will be raised telling you to fill it up.
 
-The most important part is setting up the LLM part... If you wish to use OpenAI Model, Make sure to set `OPENAI` to `true` and choosing what model you want to use and don't forget your API Key. Do NOT fill in the `BASE_URL` value as that is pre-set within OpenAI package.
+The most important part is setting up the LLM part... If you wish to use an OpenAI Model, Make sure to set `OPENAI` to `true` and choosing what model you want to use and don't forget your API Key. Do NOT fill in the `BASE_URL` value as that is pre-set within OpenAI package.
 
 If you wish to use a custom/locally hosted LLM, then set `OPENAI` to `false` and specify which model you want to use and the `BASE_URL` where the requests to the LLM will be made.
 I used [ollama](https://github.com/ollama/ollama) for my testing, so that means my settings.json looked like this:
@@ -106,10 +106,10 @@ Essay.Assemble(watermark=True)
 
 ```
 
-The `Essay.Assemble()` Function simply packages all the Information such as Paragraphs, citations, and pictures generated using the `Essay.Generate()` Function, inside a Final Document, that document can either be a DOCX or PDF file. After all the functions have been executed successfully, the document should appear in your `./` path as `essay_XXXXXXXXXX.(docx/pdf)`. From there you can access the final result Generated.
+The `Essay.Assemble()` Function simply packages all the Information such as Paragraphs, citations, and pictures generated using the `Essay.Generate()` Function, inside a Final Document, that document can either be a DOCX or PDF file. After all the functions have been executed successfully, the document should appear in your `./` path as `essay_XXXXXXXXXX.(docx/pdf)`. From there, you can access the final result Generated.
 
 Keep in mind that you need [Microsoft Office](https://www.microsoft.com/en-us/microsoft-365/microsoft-office) or [LibreOffice](https://www.libreoffice.org/) installed on your device depending on your Operating System, thats ONLY if you are trying to convert your document to a pdf.
-You do NOT need any type of Document management software/suit for just generating a DOCX file as that is handled inside the imported python library.
+You do NOT need any type of Document management software/suite for just generating a DOCX file as that is handled inside the imported python library.
 
 Speaking of python libraries, make sure you install all of the required packages using the [requirements.txt](requirements.txt) file provided.
 
